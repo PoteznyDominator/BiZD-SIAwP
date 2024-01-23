@@ -1,4 +1,4 @@
-# Projket - prognoza pogody
+# Projekt - prognoza pogody
 
 Przygotowali:
 - Błażej Murawski 173730

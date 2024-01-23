@@ -5,7 +5,7 @@ from utils import get_connection
 
 
 def populate_cities(cur):
-    df = pd.read_csv('data/cities.csv')
+    df = pd.read_csv('../data/cities.csv')
 
     print("Inserting data to the CITIES table...")
     for _, row in df.iterrows():
@@ -16,9 +16,9 @@ def populate_cities(cur):
 
 
 def populate_codes(cur):
-    df = pd.read_csv('data/codes.csv', sep=';')
+    df = pd.read_csv('../data/codes.csv', sep=';')
 
-    print("Inserting data to the Codes table...")
+    print("Inserting data to the CODES table...")
     for _, row in df.iterrows():
         cur.execute("insert into Codes(CodeID, Description) values (:1, :2)",
                     [row['code'], row['description']])
@@ -27,7 +27,7 @@ def populate_codes(cur):
 
 
 def populate_weather(cur):
-    df = pd.read_csv('data/weather.csv')
+    df = pd.read_csv('../data/weather.csv')
 
     print("Inserting data to the WEATHER table...")
     for index, row in df.iterrows():
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     populate_cities(cursor)
     populate_codes(cursor)
     populate_weather(cursor)
-    connection.commit()
 
+    connection.commit()
     cursor.close()
     connection.close()

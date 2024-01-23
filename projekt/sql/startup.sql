@@ -1,16 +1,16 @@
-CREATE TABLE Cities (
+CREATE TABLE IF NOT EXISTS Cities (
     CityID INT PRIMARY KEY,
     CityName VARCHAR(255),
     Latitude FLOAT,
     Longitude FLOAT
 );
 
-CREATE TABLE Codes (
+CREATE TABLE IF NOT EXISTS Codes (
   CodeId INT PRIMARY KEY,
   Description VARCHAR(255)
 );
 
-CREATE TABLE Weather (
+CREATE TABLE IF NOT EXISTS Weather (
     WeatherID INT PRIMARY KEY,
     CityID INT,
     CodeId INT,
