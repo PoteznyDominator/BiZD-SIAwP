@@ -1,7 +1,9 @@
 from core.hypothesis import print_hypothesis
 from core.statistics import base_statistics
 from core.utils import get_connection, extract_df
+from core.dbhandlerstest import test_handlers
 from core.regressions import temperature_regressions, precipitation_regressions
+from core.visualizations import visualize
 
 if __name__ == '__main__':
     connection = get_connection()
@@ -13,6 +15,8 @@ if __name__ == '__main__':
     print_hypothesis(df)
 
     # regresja przykładowa dla miasta Olsztyn
-    # olsztyn = df[df['CITYNAME'] == 'Olsztyn']
-    # temperature_regressions(olsztyn)
-    # precipitation_regressions(olsztyn)
+    olsztyn = df[df['CITYNAME'] == 'Olsztyn']
+    temperature_regressions(olsztyn)
+    precipitation_regressions(olsztyn)
+    test_handlers(connection)
+    visualize(df)

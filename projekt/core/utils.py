@@ -1,5 +1,6 @@
 import os
 import oracledb
+import pandas as pd
 
 
 def get_connection():
